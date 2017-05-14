@@ -5,7 +5,8 @@ title: Tk Asme Api Ingenieria
 description: "Empresa metal mecánica de construcción y reparación de tanques a presión, redes tuberías de conducción de hidrocarburos, gas y obras complementarias en Colombia"
 analytics: #Google analytics code in the format XX-nnnnnnnn-n
 baseurl: "" #important: start with /
-url: https://cristianpb.github.io/tkasme
+url: http://cristianpb.github.io/ "" # the base hostname & protocol for your site, e.g. http://example.com
+
 
 # Build settings
 markdown: kramdown
@@ -115,5 +116,3 @@ testimonial:
     message: "Tk Asme nos ha acompañado en el diseño, construcción y reparación de la tubería y todas sus obras complementarias."
     author: Jorge Clavijo
     position: Ingeniero Mecanico - CLAVIJO S.A
-
-theme: jekyll-theme-cayman
