@@ -3,15 +3,24 @@
 # Site settings
 title: Tk Asme Api Ingenieria
 description: "Empresa metal mecánica de construcción y reparación de tanques a presión, redes tuberías de conducción de hidrocarburos, gas y obras complementarias en Colombia"
-analytics: #Google analytics code in the format XX-nnnnnnnn-n
+analytics: "UA-68913933-1" #Google analytics code in the format XX-nnnnnnnn-n
 baseurl: "" #important: start with /
-url: "http://cristianpb.github.io/tkasme" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://tkasme.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # Build settings
 markdown: kramdown
 permalink: /:categories/:title
 excerpt_separator: <!--more--> #use this in posts to define how long the excerpt of the post (that is shown on the Blog page) is
+
+gems:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jemoji
+
 
 colors:  #in hex code if not noted else
   primary: "#00b3fe" #"#F70031"
