@@ -1,12 +1,27 @@
-<div id="cwrap">
-    <div class="container">
-        <div class="row centered">
-            <h3>Nuestros Clientes</h3>
-            {% for client in site.clients %}
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <img src="{{ "/assets/img/clients/" | prepend: site.baseurl }}{{ client.img }}" class="img-responsive">
+<!-- Clients Aside -->
+    <aside class="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/acueducto.svg" class="img-responsive img-centered" alt="">
+                    </a>
                 </div>
-            {% endfor %}
-        </div><! --/row -->
-    </div><! --/container -->
-</div><! --/cwrap -->
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/cemex.svg" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/gasan.svg" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="img/logos/metrogas.svg" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </aside>
