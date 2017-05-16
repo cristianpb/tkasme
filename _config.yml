@@ -1,6 +1,6 @@
 title: Tk Asme Api Ingenieria
 description: "Empresa metal mecánica de construcción y reparación de tanques a presión, redes tuberías de conducción de hidrocarburos, gas y obras complementarias en Colombia. Medicion de espesores, prueba hidrostatica."
-analytics: "UA-68913933-1" #Google analytics code in the format XX-nnnnnnnn-n
+google_analytics: "UA-68913933-1" #Google analytics code in the format XX-nnnnnnnn-n
 baseurl: "" #important: start with /
 url: "https://tkasme.com" # the base hostname & protocol for your site, e.g. http://example.com
 
