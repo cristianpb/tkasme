@@ -6,15 +6,13 @@ url: "https://tkasme.com" # the base hostname & protocol for your site, e.g. htt
 
 # Site settings
 title: Tk Asme Api
-email: tkasme@yahoo.es
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
   - title: twitter
-    url: http://twitter.com/jekyllrb
+    url: #
   - title: facebook
-    url:
+    url: #
 
 # Postal address (add as many lines as necessary)
 address:
@@ -32,4 +30,31 @@ gems:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jemoji
+  - jekyll-minibundle
+  - jekyll-gist 
+  - jekyll-assets
+
+# minifier settings
+minibundle:
+  minifier_commands:
+    js: uglifyjs -
+    source_dir: _assets/javascripts
+    destination_path: /assets/head
+    assets:
+    - jquery-2.1.4
+    - bootstrap
+    - slick
+    - slides
+    - layout
+    - flickr-import
+    attributes:
+    async: async
+
+assets:
+  compress:
+    css: true
+  js_compressor:  uglifier
+  css_compressor: scss
+  features:
+    liquid: true
 

@@ -7,9 +7,9 @@ date: 2014-07-18
 img: Decompresora.jpg
 thumbnail: thumbs/Decompresora.jpg
 alt: image-alt
-project-date: April 2014
-client: Start Bootstrap
-category: Web Development
-description: Lorem ipsum dolor sit amet, usu cu alterum nominavi lobortis. At duo novum diceret. Tantas apeirian vix et, usu sanctus postulant inciderint ut, populo diceret necessitatibus in vim. Cu eum dicam feugiat noluisse.
+project-date: Junio - Julio 2014
+client: Metrogas
+category: Estacion decompresora. Pruebas hidrostaticas
+description: Construcción y montaje en sitio - Municipio de Valle de San José y Páramo - de dos estaciones de compresión, con su patín soporte de la estructura de la estación decompresora, según diseños anexos. Pruebas hidrostaticas.
 
 ---
