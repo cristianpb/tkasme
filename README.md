@@ -10,6 +10,12 @@ todo:
 
 [ ] **Redirect batcave** include a 301 file https://github.com/nquinlan/jekyll-pageless-redirects
 
+[ ] Fill image alt
+
+[ ] Fill proyects portfolio
+
+[ ] Minimize html et js
+
 ##  Initial Batcave server (since 2013):
 
 [tkasme.batcave.net](http://tkasme.batcave.net/)
