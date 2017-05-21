@@ -3,6 +3,7 @@ description: "Empresa metal mecánica de construcción y reparación de tanques 
 google_analytics: "UA-68913933-1" #Google analytics code in the format XX-nnnnnnnn-n
 baseurl: "" #important: start with /
 url: "https://tkasme.com" # the base hostname & protocol for your site, e.g. http://example.com
+lang: "es"
 
 # Site settings
 title: Tk Asme Api
@@ -33,6 +34,9 @@ gems:
   - jekyll-minibundle
   - jekyll-gist 
   - jekyll-assets
+
+include:
+  - _pages
 
 # minifier settings
 minibundle:
