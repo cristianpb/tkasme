@@ -1,64 +1,49 @@
-title: Tk Asme Api Ingenieria
-description: "Empresa metal mecánica de construcción y reparación de tanques a presión, redes tuberías de conducción de hidrocarburos, gas y obras complementarias en Colombia. Medicion de espesores, prueba hidrostatica."
-google_analytics: "UA-68913933-1" #Google analytics code in the format XX-nnnnnnnn-n
-baseurl: "" #important: start with /
-url: "https://tkasme.com" # the base hostname & protocol for your site, e.g. http://example.com
-lang: "es"
-
 # Site settings
-title: Tk Asme Api
 
-# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+title: Tkasme api ingenieria
+description: "Empresa metal mecánica de construcción y reparación de tanques a presión, redes tuberías de conducción de hidrocarburos, gas y obras complementarias en Colombia. Medicion de espesores, prueba hidrostatica."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://tkasme.com" # the base hostname & protocol for your site, e.g. http://example.com
+author: Cristian Perez
+logo: /img/logo_square.svg
+
 social:
-  - title: twitter
-    url: #
-  - title: facebook
-    url: #
+  name: Tk Asme Api Ingenieria
+  links:
+    - https://plus.google.com/117521031029555557198
 
-# Postal address (add as many lines as necessary)
-address:
-  - line: Zona Industrial Km 2 Cr0 3-57 Vía Chimitá
-  - line: Bucaramanga, Santander, Colombia
+google_analytics: "UA-68913933-1" #Google analytics code in the format XX-nnnnnnnn-n
+google_site_verification: "6A_MGnrnswlpSrE8HkL03McCaZMjmAT_1jHhL1t1YqE"
 
+#webmaster_verifications:
+#  google: 1234
+#  bing: 1234
+#  alexa: 1234
+#  yandex: 1234
+#
+lang: es_ES
+ 
 # Build settings
+sass:
+    style: compressed
 markdown: kramdown
-permalink: pretty
-
+kramdown:
+  parse_block_html: true
 plugins:
-  - jekyll-feed
   - jekyll-paginate
-  - jekyll-redirect-from
-  - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
   - jemoji
-  - jekyll-minibundle
-  - jekyll-gist
-  - jekyll-assets
-
-include:
-  - _pages
-
-# minifier settings
-minibundle:
-  minifier_commands:
-    js: uglifyjs -
-    source_dir: _assets/javascripts
-    destination_path: /assets/head
-    assets:
-    - jquery-2.1.4
-    - bootstrap
-    - slick
-    - slides
-    - layout
-    - flickr-import
-    attributes:
-    async: async
-
-assets:
-  compress:
-    css: true
-  js_compressor:  uglifier
-  css_compressor: scss
-  features:
-    liquid: true
-
+exclude:
+  - drafts
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+ 
+#defaults:
+#    - {scope: {type: posts}, values: {layout: post, permalink: '/blog/:title'}}
+#
+#include:
+#  - _pages

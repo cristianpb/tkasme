@@ -1,3 +1,1 @@
----
-layout: feed
----
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="https://tkasme.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tkasme.com/" rel="alternate" type="text/html" /><updated>2017-08-27T13:14:08+02:00</updated><id>https://tkasme.com/</id><title type="html">Tk Asme Api Ingenieria</title><subtitle>Empresa metal mecánica de construcción y reparación de tanques a presión, redes tuberías de conducción de hidrocarburos, gas y obras complementarias en Colombia. Medicion de espesores, prueba hidrostatica.</subtitle></feed>
