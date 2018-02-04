@@ -24,7 +24,7 @@ address:
 markdown: kramdown
 permalink: pretty
 
-gems:
+plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-redirect-from
@@ -32,7 +32,7 @@ gems:
   - jekyll-sitemap
   - jemoji
   - jekyll-minibundle
-  - jekyll-gist 
+  - jekyll-gist
   - jekyll-assets
 
 include:
