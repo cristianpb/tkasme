@@ -1,31 +1,93 @@
 ---
 layout: default
 ---
-
-{% include wrap.html %}
-
-<div class="container mtb">
-    <div class="row">
-        <! -- SINGLE POST -->
-        <div class="col-lg-8">
-            <! -- Blog Post  -->
-            <p><img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ page.img }}"></p>
-            <a href="{{ page.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ page.title }}</h3></a>
-            <p><csmall>{{ page.date | date: "%b %-d, %Y" }}. | By: {{ page.author }}</csmall></p>
-              
+<section class="hero is-primary">
+    <div class="hero-body">
+        <div class="container is-fluid">
+            <h1 class="title">
+                {{ page.title }}
+            </h1>
+            <h2 class="subtitle">
+                {{ page.description }}
+            </h2>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container is-fluid">
+        <div class="content">
             {{ content }}
+        </div>
+    </div>
+</section>
+{% if site.author.show_on_post or page.comments %}
+<div class="section">
+    <div class="container is-fluid">
 
-            <div class="spacing"></div>
-            <!-- <h6>SHARE:</h6>
-            <p class="share">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-tumblr"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>		 		
-            </p> -->
-        </div><! --/col-lg-8 -->
-        
-        {% include sidebar.html %}
+        {% if site.author.show_on_post %}
+        <div class="box">
+            <div class="media">
+                <div class="media-left">
+                    <figure class="image is-64x64">
+                        <img src="{{ site.author.image }}" alt="{{ site.author.name }}">
+                    </figure>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong>{{ site.author.name }}</strong>
+                            <br>
+                            {{ site.author.bio }}
+                        </p>
+                    </div>
+                    <p>
+                        {% if site.author.github %}
+                        <a href="https://github.com/{{ site.author.github }}">
+                                <span class="icon is-small">
+                                    <i class="fa fa-github"></i>
+                                </span>
+                        </a>
+                        {% endif %}
+                        {% if site.author.facebook %}
+                        <a href="https://facebook.com/{{ site.author.facebook }}">
+                                <span class="icon is-small">
+                                    <i class="fa fa-facebook"></i>
+                                </span>
+                        </a>
+                        {% endif %}
+                        {% if site.author.twitter %}
+                        <a href="https://twitter.com/{{ site.author.twitter}}">
+                                <span class="icon is-small">
+                                    <i class="fa fa-twitter"></i>
+                                </span>
+                        </a>
+                        {% endif %}
+                        {% if site.author.instagram %}
+                        <a href="https://instagram.com/{{ site.author.instagram}}">
+                                <span class="icon is-small">
+                                    <i class="fa fa-instagram"></i>
+                                </span>
+                        </a>
+                        {% endif %}
+                        {% if site.author.tumblr %}
+                        <a href="https://tumblr.com/{{ site.author.tumblr}}">
+                                <span class="icon is-small">
+                                    <i class="fa fa-tumblr"></i>
+                                </span>
+                        </a>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
 
-    </div><! --/row -->
-</div><! --/container -->
+        {% if page.comments %}
+        <div class="box">
+            <div id="disqus_thread"></div>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}

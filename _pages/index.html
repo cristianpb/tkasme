@@ -1,0 +1,411 @@
+---
+layout: default
+permalink: /
+image: /assets/images/logo_small.png
+leaflet: true
+map_leaflet_landing: true
+bulma_accordion: true
+
+---
+<section class="hero is-primary is-medium">
+  <div class="hero-body has-bg-img">
+    <div class="container">
+      <h1 class="title has-text-centered">
+        Tk Asme API Ingenieria
+      </h1>
+      <h2 class="subtitle has-text-centered">
+        <strong> Conozcanos </strong>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+      <h2 class="title has-text-centered" >
+        Servicios
+      </h2>
+      <p class="has-text-centered">
+        Los principales sectores de nuestra empresa son:
+      </p>
+      <br>
+
+
+      <div class="columns is-mobile is-multiline is-horizontal-center">
+
+        <div class="column is-4-desktop is-6-mobile">
+          <div class='card-content is-flex is-horizontal-center'>
+            <figure class="image is-128x128">
+              <amp-img src="/assets/images/servicios/tanques.svg" alt="Tanques" height="128" width="128" layout="responsive"></amp-img>
+            </figure>
+          </div>
+          <h3 class="subtitle has-text-centered">Fabricacion de tanques</h3>
+          <p class="has-text-centered">
+            Fabricación de tanques, recipientes atmosféricos y a presión
+          </p>
+        </div>
+
+
+
+        <div class="column is-4-desktop is-6-mobile">
+          <div class='card-content is-flex is-horizontal-center'>
+            <figure class="image is-128x128">
+              <amp-img src="/assets/images/servicios/reparacion.svg" alt="Reparacion" height="128" width="128" layout="responsive"></amp-img>
+            </figure>
+          </div>
+          <h3 class="subtitle has-text-centered">Reparacion y mantenimiento</h3>
+          <p class="has-text-centered">
+            Reparación, mantenimiento, inspección, medición de espesores y prueba hidrostatica
+          </p>
+        </div>
+
+        <div class="column is-4-desktop is-6-mobile">
+          <div class='card-content is-flex is-horizontal-center'>
+            <figure class="image is-128x128">
+              <amp-img src="/assets/images/servicios/tuberias.svg" alt="Tuberias" height="128" width="128" layout="responsive"></amp-img>
+            </figure>
+          </div>
+          <h3 class="subtitle has-text-centered">Redes de tuberias</h3>
+          <p class="has-text-centered">
+            Construcción y reparación de tuberías de conducción de hidrocarburos, gas y sus obras complementarias
+          </p>
+        </div>
+
+      </div>
+
+  </div>
+</section>
+
+<section class="hero is-small is-primary">
+  <div class="hero-body" id="about">
+    <div class="container">
+
+      <h2 class="title has-text-centered" >
+         Portafolio
+      </h2>
+
+      <p class="subtitle has-text-centered">
+        Algunos de nuestros proyectos son
+      </p>
+      <div class="columns is-mobile is-multiline is-horizontal-center">
+
+        {% for project in site.data.portfolio %}
+        <div class="column is-4-desktop is-12-mobile">
+          <div class='card-content is-horizontal-center'>
+            <amp-img src="{{ project.img }}"
+              on="tap:myModal.active"
+              alt="Decompresora" height="289" width="400"
+              layout="responsive"></amp-img>
+          </div>
+          <h3 class="subtitle has-text-centered">
+            {{ project.title }}
+          </h3>
+          <p class="has-text-centered">
+            {{ project.description }}
+          </p>
+        </div>
+        {% endfor %}
+
+<!--
+<amp-state id="myAnimals">
+
+  <script type="application/json">
+    {
+      "selected": false
+    }
+  </script>
+</amp-state>
+<button on="tap:AMP.setState({selected: 1})">Set to Cat</button>
+<div class="modal" [class]="selected == true ? 'is-active' : ''">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+    </section>
+    <footer class="modal-card-foot">
+      <button on="tap:AMP.setState({selected: null})">Cerrar</button>
+    </footer>
+  </div>
+</div>
+-->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <h2 class="title has-text-centered">
+      Nuestra historia
+    </h2>
+    <p>
+      Estos son algunos de nuestros principales acontecimientos
+    </p>
+    <div class="columns is-mobile is-multiline">
+      <div class="column is-4-desktop is-6-mobile">
+        <div class='card-content is-flex is-horizontal-center'>
+          <figure class="image is-128x128">
+            <amp-img src="/assets/images/whyinvolve/forget_boundaries1.svg" alt="GSWAI forget boundaries" height="128" width="128" layout="responsive"></amp-img>
+          </figure>
+        </div>
+        <div class="content">
+          Be part of a plural community, connect with other AI actors, share 
+          knowledge and transfer skills
+        </div>
+      </div>
+      <div class="column is-4-desktop is-6-mobile">
+        <div class='card-content is-flex is-horizontal-center'>
+          <figure class="image is-128x128">
+            <amp-img src="/assets/images/whyinvolve/forget_boundaries.svg" alt="GSWAI forget boundaries" height="128" width="128" layout="responsive"> </amp-img>
+          </figure>
+        </div>
+        <div class="content">
+          Forget boundaries, participate to the AI Renaissance, spread innovation and break challenges worldwide
+        </div>
+      </div>
+      <div class="column is-4-desktop is-6-mobile">
+        <div class='card-content is-flex is-horizontal-center'>
+          <figure class="image is-128x128">
+            <amp-img src="/assets/images/whyinvolve/bridge_gap.svg" alt="GSWAI bridge gap between AI research and business" height="128" width="128" layout="responsive"></amp-img>
+          </figure>
+        </div>
+        <div class="content">
+          Bridge the gap between AI research world and business ecosystem, 
+          transform AI in a applied world!
+        </div>
+      </div>
+      <div class="column is-4-desktop is-6-mobile">
+        <div class='card-content is-flex is-horizontal-center'>
+          <figure class="image is-128x128">
+            <amp-img src="/assets/images/whyinvolve/get_resources.svg" alt="GSWAI get connections" height="128" width="128" layout="responsive"></amp-img>
+          </figure>
+        </div>
+        <div class="content">
+          Get access to resources and connections such as pre-event workshops, 
+          remote mentoring, and live sessions with global communities!
+        </div>
+      </div>
+      <div class="column is-4-desktop is-6-mobile">
+        <div class='card-content is-flex is-horizontal-center'>
+          <figure class="image is-128x128">
+            <amp-img src="/assets/images/whyinvolve/test_ideas.svg" alt="GSWAI test ideas" height="128" width="128" layout="responsive"></amp-img>
+          </figure>
+        </div>
+        <div class="content">
+          Test your ideas, skills, and passion in a safe and supported environment
+        </div>
+      </div>
+      <div class="column is-4-desktop is-6-mobile">
+        <div class='card-content is-flex is-horizontal-center'>
+          <figure class="image is-128x128">
+            <amp-img src="/assets/images/whyinvolve/exclusive_prices.svg" alt="GSWAI get exclusive prizes and perks" height="128" width="128" layout="responsive"></amp-img>
+          </figure>
+        </div>
+        <div class="content">
+          Winning teams during GSW will receive exclusive prizes and perks!
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title has-text-centered">
+        <a href="{{ "/articles" | prepend: site.baseurl }}" target="_blank">LAST ARTICLES</a>
+      </h2>
+      <div class="columns">
+        {% for post in site.data.articles limit:3 offset:0 %}
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by2">
+                <a href="{{ post.medium_url }}">
+                  <amp-img src="/assets/images/posts/{{ post.image_post }}" alt="{{ post.title }}"  height="2.0" width="4.0" layout="responsive"></amp-img>
+                </a>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <amp-img src="/assets/images/posts/{{ post.image_author }}" alt="{{ post.author }}" height="48" width="48" layout="responsive"></amp-img>
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <a class="content" href="{{ post.medium_url }}"><strong>{{ post.author }}</strong></a> <br>
+                  <p class="content">{{ post.date | date: "%b %-d, %Y" }}</p>
+                </div>
+              </div>
+
+              <div class="content">
+                {{ post.title }}
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-fullhd">
+    <h2 class="title has-text-centered">
+      Global Sponsors
+    </h2>
+
+    <div class="columns is-horizontal-center is-multiline is-gapless is-mobile">
+      <div class="column is-one-quarter-desktop is-half-mobile">
+        <div class='card-content is-horizontal-center'>
+          <figure class="image">
+            <amp-img src="/assets/images/partners/franceai.svg" alt="France AI" height="128" width="256" layout="responsive"></amp-img>
+          </figure>
+        </div>
+      </div>
+      <div class="column is-one-quarter-desktop is-half-mobile">
+        <div class='card-content is-horizontal-center'>
+          <figure class="image">
+            <amp-img src="/assets/images/partners/wayra.svg" alt="WAYRA" height="128" width="256" layout="responsive"></amp-img>
+          </figure>
+        </div>
+      </div>
+      <div class="column is-one-quarter-desktop is-half-mobile">
+        <div class='card-content is-horizontal-center'>
+          <figure class="image">
+            <amp-img src="/assets/images/partners/bridge.svg" alt="Bridge for millions" height="128" width="256" layout="responsive"></amp-img>
+          </figure>
+        </div>
+      </div>
+      <div class="column is-one-quarter-desktop is-half-mobile">
+        <div class='card-content is-horizontal-center'>
+          <figure class="image">
+            <amp-img src="/assets/images/partners/google.svg" alt="google" height="128" width="256" layout="responsive"></amp-img>
+          </figure>
+        </div>
+      </div>
+      <div class="column is-one-quarter-desktop is-half-mobile">
+        <div class='card-content is-horizontal-center'>
+          <figure class="image">
+            <amp-img src="/assets/images/partners/accelerateur.svg" alt="Accelerateur Allianz" height="128" width="256" layout="responsive"></amp-img>
+          </figure>
+        </div>
+      </div>
+      <div class="column is-one-quarter-desktop is-half-mobile">
+        <div class='card-content is-horizontal-center'>
+          <figure class="image">
+            <amp-img src="/assets/images/partners/loreal.svg" alt="Loreal" height="128" width="256" layout="responsive"></amp-img>
+          </figure>
+        </div>
+      </div>
+      <div class="column is-one-quarter-desktop is-half-mobile">
+        <div class='card-content is-horizontal-center'>
+          <figure class="image">
+            <amp-img src="/assets/images/partners/techstars.svg" alt="Techstars" height="128" width="256" layout="responsive"></amp-img>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section is-small">
+  <div class="container">
+    <h2 class="title has-text-centered">
+      Global Technology Partners
+    </h2>
+
+    <div class="columns is-multiline is-horizontal-center is-mobile">
+      <div class="column is-3-desktop is-centered is-half-mobile">
+        <figure class="image">
+          <amp-img src="/assets/images/partners/snips.svg" alt="Snips" height="128" width="128" layout="responsive"></amp-img>
+        </figure>
+      </div>
+      <div class="column is-3-desktop is-centered is-half-mobile">
+        <figure class="image">
+          <amp-img src="/assets/images/partners/recast.svg" alt="Recast AI" height="128" width="128" layout="responsive"></amp-img>
+        </figure>
+      </div>
+      <div class="column is-3-desktop is-centered is-half-mobile">
+        <figure class="image">
+          <amp-img src="/assets/images/partners/ibm-watson.png" alt="IBL watson" height="128" width="128" layout="responsive"></amp-img>
+        </figure>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section is-small">
+  <div class="container">
+    <h2 class="title has-text-centered">
+      Global Community Partners
+    </h2>
+
+    <div class="columns is-multiline is-horizontal-center is-mobile">
+      <div class="column is-4-desktop is-half-mobile">
+        <figure class="image">
+          <amp-img src="/assets/images/partners/hellotomorrow.svg" alt="hello tomorrow" height="128" width="256" layout="responsive"></amp-img>
+        </figure>
+      </div>
+      <div class="column is-4-desktop is-half-mobile">
+        <figure class="image">
+          <amp-img src="/assets/images/partners/tencent.svg" alt="tencent" height="128" width="256" layout="responsive"></amp-img>
+        </figure>
+      </div>
+      <div class="column is-4-desktop is-half-mobile">
+        <figure class="image">
+          <amp-img src="/assets/images/partners/cityai.svg" alt="city ai" height="128" width="256" layout="responsive"></amp-img>
+        </figure>
+      </div>
+      <div class="column is-4-desktop is-half-mobile">
+        <figure class="image">
+          <amp-img src="/assets/images/partners/hashtagtrophy.svg" alt="hastagtrophy" height="128" width="256" layout="responsive"></amp-img>
+        </figure>
+      </div>
+      <div class="column is-4-desktop is-half-mobile">
+        <figure class="image">
+          <amp-img src="/assets/images/partners/vertica.svg" alt="vertica" height="128" width="256" layout="responsive"></amp-img>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <h2 class="title has-text-centered">
+      Global Media Partners
+    </h2>
+
+    <div class="columns is-gapless is-mobile">
+      <div class="column">
+        <div class='is-flex is-horizontal-center'>
+          <figure class="image is-128x128">
+            <amp-img src="/assets/images/partners/frenchweb.png" alt="French Web" height="128" width="128" layout="responsive"></amp-img>
+          </figure>
+        </div>
+      </div>
+      <div class="column">
+        <div class='is-flex is-horizontal-center'>
+          <figure class="image is-128x128">
+            <amp-img src="/assets/images/partners/maddyness.svg" alt="Maddyness Magazine" height="128" width="128" layout="responsive"></amp-img>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

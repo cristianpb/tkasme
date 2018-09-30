@@ -1,0 +1,104 @@
+---
+layout: default
+title: Team
+description: "Tens of volunteer organisers are helping their local communities in emerging and developed countries to embrace their inner entrepreneur, and adopt new AI technologies to reply to world challenges."
+image: /assets/images/logo_small.png
+permalink: /team
+
+---
+
+<section class="hero is-primary is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title has-text-centered">
+        Behind the scenes
+      </h1>
+
+      <h2 class="subtitle has-text-centered">
+        Main team
+      </h2>
+      <div class="columns is-multiline is-horizontal-center is-mobile">
+        {% for member in site.data.team.main %}
+        <div class="column is-4-desktop is-half-mobile">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                <amp-img width="400" height="400" layout="intrinsic" src="{{ member.img }}" alt="{{ member.name }}"></amp-img>
+              </figure>
+            </div>
+            <div class="card-content">
+
+              <div class="content">
+                <h2>{{ member.name }}</h2>
+                <a class="icon" href="{{ member.linkedin }}">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+
+      <h2 class="subtitle has-text-centered">
+        Ambassadors
+      </h2>
+
+      <div class="columns is-multiline is-horizontal-center is-mobile">
+        {% for member in site.data.team.ambassadors %}
+        <div class="column is-4-desktop is-half-mobile">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                <amp-img width="400" height="400" layout="intrinsic" src="{{ member.img }}" alt="{{ member.name }}"></amp-img>
+              </figure>
+            </div>
+            <div class="card-content">
+
+              <div class="content">
+                <h2>{{ member.name }}</h2>
+                <a class="icon" href="{{ member.linkedin }}">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small" id="quotes">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title has-text-centered">
+        Quotes
+      </h2>
+
+      {% for quote in site.data.quotes %}
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <amp-img width="64" height="64" layout="intrinsic" src="{{ quote.img }}" alt="{{ quote.author }}"></amp-img>
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>{{ quote.author }}</strong> <small>{{ quote.title }}</small>
+              <br>
+              {{ quote.text }}
+            </p>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>

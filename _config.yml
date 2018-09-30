@@ -1,117 +1,50 @@
-### GENERAL SETTINGS ###
-
-# Site settings
 title: Tk Asme Api Ingenieria
-description: "Empresa metal mecánica de construcción y reparación de tanques a presión, redes tuberías de conducción de hidrocarburos, gas y obras complementarias en Colombia"
-analytics: #Google analytics code in the format XX-nnnnnnnn-n
-baseurl: "" #important: start with /
-url: "http://yourdomain.com"
-
-# Build settings
-markdown: kramdown
-permalink: /:categories/:title
-excerpt_separator: <!--more--> #use this in posts to define how long the excerpt of the post (that is shown on the Blog page) is
-
-colors:  #in hex code if not noted else
-  primary: "#00b3fe" #"#F70031"
-  primary_rgb: "0,179,254" #"247,0,49" #rgb of the primary. Needed in some places for the transparency effect.
-  secondary: "#384452" #"#33004D"
-  link: "#428bca"
-  link_hover: "#01b2fe"
-  footer_heading: "#ffffff"
-  footer_content: "#bfc9d3"
-
-# Making projects separate from posts
-collections:
-  projects:
-    output: true
-    permalink: /projects/:title/
-  questions:
-    output: true
-    permalink: /questions/:title/
-
-### CONTACT SETTINGS ###
-
-# Social networks usernames. Many more available: google-plus, flickr, linkedin, etc). Shown in footer.
+description: "Empresa metal mecánica de construcción y reparación de tanques a presión, redes tuberías de conducción de hidrocarburos, gas y obras complementarias en Colombia. Medicion de espesores, prueba hidrostatica."
+baseurl: ""
+url: "https://tkasme.com"
 social:
-  - title: facebook
-    url:
-  - title: twitter
-    url:
-  - title: instagram
-    url:
+  name: Global SWAI
+  links:
+    - https://www.instagram.com/global_swai
+author:
+  name: Tk Asme API
+  image: /assets/logo_small.png
+  email: tkasme@yahoo.es
+  show_on_post: true
+logo: /assets/logo_small.png
+lang: es
+google_analytics: "UA-68913933-1" #Google analytics code in the format XX-nnnnnnnn-n
 
-# Postal address (add as many lines as necessary). Shown in footer and on Contact page.
-address:
-  - lines:
-    - Cr 0 N. 3-57 Zona Industrial
-    - Bucaramanga, Santander
-    - Colombia
-email: tkasme@yahoo.es
-tel: +(577) 6 76 00 72
+# Color the browser elements #
+color-browser: "#13123d"
+apple-status-bar-style: "black"
 
+permalink: /:categories/:title/
+sass:
+  style: compressed
+markdown: kramdown
 
-### GENERAL DATA FOR VARIOUS LOCATIONS ###
+collections:
+  iframes:
+    output: true
+    permalink: /:collection/:name
 
-# Members information. Shown on About page.
-members:
-  - name: Crispiniano Perez
-    position: CEO
-    text: Ingeniero mecanico UIS.
-    img: team01.jpg
-    social:
-      - title: envelope #use for email address
-        url: mailto:name@domain.com
-      - title: twitter
-        url: http://twitter.com/handle
-  - name: David
-    position: Lead Designer
-    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    img: team02.jpg
-    social:
-      - title: envelope #use for email address
-        url: mailto:name@domain.com
-      - title: twitter
-        url: http://twitter.com/handle
-  - name: Betty 
-    position: Lead Developer
-    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    img: team03.jpg
-    social:
-      - title: envelope #use for email address
-        url: mailto:name@domain.com
-      - title: twitter
-        url: http://twitter.com/handle
-  - name: Martin Blunt
-    position: Marketing
-    text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    img: team04.jpg
-    social:
-      - title: envelope #use for email address
-        url: mailto:name@domain.com
-      - title: twitter
-        url: http://twitter.com/handle
+plugins:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
-# Clients information. Shown on Home and About pages.
-clients:
-  - name: Gasan
-    img: gasan.svg
-  - name: Metrogas
-    img: metrogas.svg
-  - name: Norgas
-    img: norgas.svg
-  - name: Terpel
-    img: terpel.svg
-  - name: Cemex
-    img: cemex.svg
-  - name: Acueducto
-    img: acueducto.svg
+include:
+  - _pages
 
-# Short text about your company. Shown in footer on every page and also separately on Home and Contact page.
-about: "Tk Asme Api es una empresa líder en la industria metal mecánica con ya mas de 15 anos de experiencia."
-
-# Testimonial content. Shown on Home and About page.
-testimonial:
-    message: "Tk Asme nos ha acompañado en el diseño, construcción y reparación de la tubería y todas sus obras complementarias."
-    author: Jorge Clavijo
-    position: Ingeniero Mecanico - CLAVIJO S.A
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - CNAME
+  - vendor
+  - node_modules
+  - package-lock.json

@@ -1,14 +1,197 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html amp lang="en">
+<head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+   <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+   <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+   <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+   <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml" />
 
-    {% include head.html %}
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
-    <body>
-        {% include nav.html %}
 
-            {{ content }}
+    <style amp-custom>
+    {% include main-min.css %}
+    </style>
 
-        {% include footer.html %}
-        {% include js.html %}
-    </body>
+
+    {% include color-browser.html %}
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title> {% seo title=false %}
+    <meta property="og:type" content="website" />
+</head>
+<body class="has-navbar-fixed-top">
+  
+  <nav class="navbar is-fixed-top is-primary header">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <amp-img src="/assets/images/logo.svg" alt="Tk asme logo" width="160" height="40"></amp-img>
+        </a>
+      <a class="navbar-burger burger" on='tap:sidebar.toggle' 
+        data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/">
+          Tk Asme API Ingenieria
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <a class="navbar-item is-link" href="/#about">
+          Servicios
+        </a>
+        <a class="navbar-item" href="/gswai2017">
+          Portafolio
+        </a>
+        <a class="navbar-item" href="/team">
+          Acerca de nosotros
+        </a>
+        <a class="navbar-item" href="/team">
+          Equipo
+        </a>
+        <a class="navbar-item" href="/team">
+          Contactenos
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <amp-sidebar id="sidebar"
+    layout="nodisplay"
+    side="right">
+    <amp-img class="amp-close-image"
+      src="/assets/images/close.png"
+      width="20"
+      height="20"
+      alt="close sidebar"
+      on="tap:sidebar.close"
+      role="button"
+      tabindex="0"></amp-img>
+    <a class="navbar-item" href="/">
+      Global SWAI
+    </a>
+    <a class="navbar-item is-link" href="/#about">
+      Get involved
+    </a>
+    <a class="navbar-item" href="/gswai2017">
+      GSWAI 2017
+    </a>
+    <a class="navbar-item" href="/team">
+      Team
+    </a>
+  </amp-sidebar>
+
+{{ content }}
+<footer class="footer">
+  <div class="container">
+    <div class="content">
+
+
+      <div class="columns">
+        <div class="column">
+          <aside class="menu">
+          <p class="menu-label">
+            <a href="/">Global SWAI</a>
+          </p>
+          <ul class="menu-list no-bullets">
+            <li><a href="/#about">Get involved</a></li>
+            <li><a href="/gswai2017">GSWAI 2017</a></li>
+            <li><a href="/team">Team</a>
+          </ul>
+          </aside>
+        </div>
+        <div class="column">
+          <p class="menu-label">
+            Find us!
+          </p>
+          {% if site.author.github %}
+           &nbsp; 
+            <a class="icon is-medium" href="{{ site.author.github }}">
+              <i class="fab fa-github fa-2x"></i>
+            </a>
+          {% endif %}
+          {% if site.author.facebook %}
+           &nbsp; 
+          <a class="icon is-medium" href="{{ site.author.facebook }}">
+            <i class="fab fa-facebook fa-2x"></i>
+          </a>
+          {% endif %}
+          {% if site.author.twitter %}
+           &nbsp; 
+          <a class="icon is-medium" href="{{ site.author.twitter }}">
+            <i class="fab fa-twitter fa-2x"></i>
+          </a>
+          {% endif %}
+          {% if site.author.instagram %}
+           &nbsp; 
+          <a class="icon is-medium" href="{{ site.author.instagram }}">
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+          {% endif %}
+          {% if site.author.medium %}
+           &nbsp; 
+          <a class="icon is-medium" href="{{ site.author.medium }}">
+            <i class="fab fa-medium fa-2x"></i>
+          </a>
+          {% endif %}
+          {% if site.author.email %}
+           &nbsp; 
+          <a class="icon is-medium" href="mailto:{{ site.author.email }}">
+            <i class="fas fa-envelope-open fa-2x"></i>
+          </a>
+          {% endif %}
+          {% if site.author.tumblr %}
+          <a class="icon" href="https://{{ site.author.tumblr }}.tumblr.com">
+            <i class="fab fa-tumblr"></i>
+          </a>
+          {% endif %}
+
+        </div>
+      </div>
+
+      <div class="has-text-centered">
+        <p>
+          2018 - Global Startup Weekend Team
+        </p>
+      </div>
+      <p>
+      </p>
+    </div>
+  </div>
+</footer>
+{% if site.google_analytics and jekyll.environment == 'production' %}
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+  "vars": {
+    "account": "{{ site.google_analytics }}"
+  },
+  "triggers": {
+    "trackPageview": {
+      "on": "visible",
+      "request": "pageview"
+    }
+  }
+}
+</script>
+</amp-analytics>
+{% endif %}
+<amp-install-serviceworker src="{{ site.baseurl | prepend: site.url }}/sw.js" layout="nodisplay"></amp-install-serviceworker>
+</body>
 </html>
