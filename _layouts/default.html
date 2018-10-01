@@ -4,10 +4,8 @@
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
-    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
-   <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
@@ -52,19 +50,19 @@
       </div>
 
       <div class="navbar-end">
-        <a class="navbar-item is-link" href="/#about">
+        <a class="navbar-item is-link" href="/#servicios">
           Servicios
         </a>
-        <a class="navbar-item" href="/gswai2017">
+        <a class="navbar-item" href="/#portafolio">
           Portafolio
         </a>
-        <a class="navbar-item" href="/team">
+        <a class="navbar-item" href="/#about">
           Acerca de nosotros
         </a>
-        <a class="navbar-item" href="/team">
+        <a class="navbar-item" href="/#equipo">
           Equipo
         </a>
-        <a class="navbar-item" href="/team">
+        <a class="navbar-item" href="/#contactenos">
           Contactenos
         </a>
       </div>
@@ -83,96 +81,29 @@
       on="tap:sidebar.close"
       role="button"
       tabindex="0"></amp-img>
-    <a class="navbar-item" href="/">
-      Global SWAI
+    <a class="navbar-item is-link" href="/#servicios">
+      Servicios
     </a>
-    <a class="navbar-item is-link" href="/#about">
-      Get involved
+    <a class="navbar-item" href="/#portafolio">
+      Portafolio
     </a>
-    <a class="navbar-item" href="/gswai2017">
-      GSWAI 2017
+    <a class="navbar-item" href="/#about">
+      Acerca de nosotros
     </a>
-    <a class="navbar-item" href="/team">
-      Team
+    <a class="navbar-item" href="/#equipo">
+      Equipo
+    </a>
+    <a class="navbar-item" href="/#contactenos">
+      Contactenos
     </a>
   </amp-sidebar>
 
 {{ content }}
 <footer class="footer">
   <div class="container">
-    <div class="content">
-
-
-      <div class="columns">
-        <div class="column">
-          <aside class="menu">
-          <p class="menu-label">
-            <a href="/">Global SWAI</a>
-          </p>
-          <ul class="menu-list no-bullets">
-            <li><a href="/#about">Get involved</a></li>
-            <li><a href="/gswai2017">GSWAI 2017</a></li>
-            <li><a href="/team">Team</a>
-          </ul>
-          </aside>
-        </div>
-        <div class="column">
-          <p class="menu-label">
-            Find us!
-          </p>
-          {% if site.author.github %}
-           &nbsp; 
-            <a class="icon is-medium" href="{{ site.author.github }}">
-              <i class="fab fa-github fa-2x"></i>
-            </a>
-          {% endif %}
-          {% if site.author.facebook %}
-           &nbsp; 
-          <a class="icon is-medium" href="{{ site.author.facebook }}">
-            <i class="fab fa-facebook fa-2x"></i>
-          </a>
-          {% endif %}
-          {% if site.author.twitter %}
-           &nbsp; 
-          <a class="icon is-medium" href="{{ site.author.twitter }}">
-            <i class="fab fa-twitter fa-2x"></i>
-          </a>
-          {% endif %}
-          {% if site.author.instagram %}
-           &nbsp; 
-          <a class="icon is-medium" href="{{ site.author.instagram }}">
-            <i class="fab fa-instagram fa-2x"></i>
-          </a>
-          {% endif %}
-          {% if site.author.medium %}
-           &nbsp; 
-          <a class="icon is-medium" href="{{ site.author.medium }}">
-            <i class="fab fa-medium fa-2x"></i>
-          </a>
-          {% endif %}
-          {% if site.author.email %}
-           &nbsp; 
-          <a class="icon is-medium" href="mailto:{{ site.author.email }}">
-            <i class="fas fa-envelope-open fa-2x"></i>
-          </a>
-          {% endif %}
-          {% if site.author.tumblr %}
-          <a class="icon" href="https://{{ site.author.tumblr }}.tumblr.com">
-            <i class="fab fa-tumblr"></i>
-          </a>
-          {% endif %}
-
-        </div>
-      </div>
-
-      <div class="has-text-centered">
-        <p>
-          2018 - Global Startup Weekend Team
-        </p>
-      </div>
-      <p>
-      </p>
-    </div>
+    <p class="has-text-centered">
+      {{ site.time | date: '%Y' }} - Tk Asme API Ingenieria
+    </p>
   </div>
 </footer>
 {% if site.google_analytics and jekyll.environment == 'production' %}
@@ -192,6 +123,8 @@
 </script>
 </amp-analytics>
 {% endif %}
+<!--
 <amp-install-serviceworker src="{{ site.baseurl | prepend: site.url }}/sw.js" layout="nodisplay"></amp-install-serviceworker>
+-->
 </body>
 </html>
