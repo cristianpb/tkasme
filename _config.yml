@@ -1,5 +1,5 @@
 title: Tk Asme Api Ingenieria
-description: "Empresa metal mecánica de construcción y reparación de tanques a presión, redes tuberías de conducción de hidrocarburos, gas y obras complementarias en Colombia, con sede principal en Bucaramanga. Medicion de espesores, prueba hidrostatica."
+description: "Empresa metal mecánica de construcción y reparación de tanques a presión, redes tuberías de conducción de hidrocarburos, gas y obras complementarias en Colombia, con sede en Bucaramanga. Medicion de espesores, prueba hidrostatica."
 baseurl: ""
 url: "https://tkgiron.xyz"
 #url: "http://tkasme.batcave.net"
@@ -7,10 +7,10 @@ social:
   name: Tk Asme API Ingenieria
 author:
   name: Tk Asme API
-  image: /assets/logo_small.png
+  image: /assets/images/logo.png
   email: tkasme@yahoo.es
   show_on_post: true
-logo: /assets/logo_small.png
+logo: /assets/images/logo.png
 lang: es
 google_analytics: "UA-68913933-1" #Google analytics code in the format XX-nnnnnnnn-n
 google-site-verification: 'O_ge7Syjw68Ie97e71BKDaKGpo01aToquytDxDmtHII'
