@@ -59,7 +59,8 @@ image: /assets/images/logo.png
         <div class="column is-4-desktop is-6-mobile">
           <div class='card-content is-flex is-horizontal-center'>
             <figure class="image is-128x128">
-              <amp-img src="/assets/images/servicios/tuberias.svg" alt="Tuberias" height="128" width="128" layout="responsive"></amp-img>
+              <amp-img src="/assets/images/servicios/tuberias.svg"
+                alt="Tuberias" height="128" width="128" layout="responsive"></amp-img>
             </figure>
           </div>
           <h3 class="subtitle has-text-centered">Redes de tuberias</h3>
@@ -72,6 +73,7 @@ image: /assets/images/logo.png
 
   </div>
 </section>
+
 
 <section class="hero is-small is-primary" id="portafolio">
   <div class="hero-body">
@@ -90,6 +92,7 @@ image: /assets/images/logo.png
         <div class="column is-4-desktop is-12-mobile">
           <div class='card-content is-horizontal-center'>
             <amp-img src="{{ project.img }}"
+              on="tap:lightbox1" role="button"
               alt="{{ project.title }}" height="289" width="400"
               layout="responsive"></amp-img>
           </div>
@@ -102,6 +105,7 @@ image: /assets/images/logo.png
         </div>
         {% endfor %}
 
+        <amp-image-lightbox id="lightbox1" layout="nodisplay" data-close-button-aria-label="Close"></amp-image-lightbox>
 
       </div>
     </div>
