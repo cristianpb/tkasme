@@ -92,7 +92,9 @@ image: /assets/images/logo.png
         <div class="column is-4-desktop is-12-mobile">
           <div class='card-content is-horizontal-center'>
             <amp-img src="{{ project.img }}"
-              on="tap:lightbox1" role="button"
+              on="tap:lightbox1" 
+              tabindex="0"
+              role="button"
               alt="{{ project.title }}" height="289" width="400"
               layout="responsive"></amp-img>
           </div>
