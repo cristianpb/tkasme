@@ -6,4 +6,4 @@
 
 ## Source code in github:
 
-[https://cristianpb.github.io/tkasme.github.io/](https://cristianpb.github.io/tkasme.github.io/)
+[https://cristianpb.github.io/tkasme](https://cristianpb.github.io/tkasme.github.io/)

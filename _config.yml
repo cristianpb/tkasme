@@ -13,7 +13,7 @@ author:
 logo: /assets/images/logo.png
 lang: es
 google_analytics: "UA-68913933-1" #Google analytics code in the format XX-nnnnnnnn-n
-google-site-verification: 'O_ge7Syjw68Ie97e71BKDaKGpo01aToquytDxDmtHII'
+google_site_verification: 'O_ge7Syjw68Ie97e71BKDaKGpo01aToquytDxDmtHII'
 
 # Color the browser elements #
 color-browser: "#13123d"
