@@ -132,4 +132,5 @@ modules.xml
 node_modules
 _sass/main.css
 
+.jekyll-cache
 # End of https://www.gitignore.io/api/sass,linux,jekyll,ruby,webstorm
