@@ -1,52 +1,107 @@
-var gulp = require('gulp'),
-  gp_concat = require('gulp-concat'),
-  gp_rename = require('gulp-rename'),
-  image = require('gulp-image'),
-  gp_uglify = require('gulp-uglify');
-var replace = require('gulp-replace');
+var gulp = require('gulp');
+var imagemin = require('gulp-imagemin');
 var sass = require('gulp-sass');
-var purify = require('gulp-purifycss');
 let cleanCSS = require('gulp-clean-css');
+var purgecss = require('gulp-purgecss')
+var responsive = require('gulp-responsive');
+var concat = require('gulp-concat');
+var replace = require('gulp-replace');
 var rename = require('gulp-rename');
+var gulpAmpValidator = require('gulp-amphtml-validator');
 
-var site = 'https://d40e46fc.ngrok.io';
+var paths = {
+  styles: {
+    src: '_sass/main.scss',
+    dest: '_includes'
+  },
+  images: {
+    src: 'assets/img',
+    dest: 'assets/img'
+  },
+  html: {
+    src: '_site/{index,es,fr}.html'
+  }
+};
 
-gulp.task('image', function () {
-  gulp.src('./assets/images/*')
-    .pipe(image({
-      pngquant: true,
-      optipng: false,
-      zopflipng: true,
-      jpegRecompress: false,
-      mozjpeg: true,
-      guetzli: false,
-      gifsicle: true,
-      svgo: true,
-      concurrent: 10,
-      quiet: true // defaults to false
+function thumbnails() {
+  return gulp.src(`${paths.images.src}/**/main{.png,.jpg,jpeg}`)
+    .pipe(responsive({
+      // Resize all images to 100 pixels wide and add suffix -thumbnail
+      '*/*': {
+        width: 300,
+        height: 200,
+        format: 'jpg',
+        rename: { suffix: '-crop'},
+        //crop: 'attention'
+      }
+    }, {
+      // Global configuration for all images
+      // The output quality for JPEG, WebP and TIFF output formats
+      quality: 70,
+      // Use progressive (interlace) scan for JPEG and PNG output
+      progressive: true,
+      // Zlib compression level of PNG output format
+      compressionLevel: 6,
+      // Strip all metadata
+      withMetadata: false,
+      crop: 'entropy'
     }))
-    .pipe(gulp.dest('./assets/images/'));
-});
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.jpegtran({progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo({
+        plugins: [
+          {removeViewBox: true},
+          {cleanupIDs: false}
+        ]
+      })
+    ], {verbose: true}))
+    .pipe(gulp.dest(paths.images.dest));
+}
 
-gulp.task('sass', function () {
-  return gulp.src('./_sass/main.scss')
+
+function images() {
+  return gulp.src(`${paths.images.src}/**/*.{png,jpg,jpeg,gif,svg}`)
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.jpegtran({progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo({
+        plugins: [
+          {removeViewBox: true},
+          {cleanupIDs: false}
+        ]
+      })
+    ], {verbose: true}))
+    .pipe(gulp.dest(paths.images.dest))
+}
+
+function amp_validator() {
+  return gulp.src(paths.html.src)
+    .pipe(gulpAmpValidator.validate())
+    .pipe(gulpAmpValidator.format())
+    .pipe(gulpAmpValidator.failAfterError());
+}
+ 
+function purification() {
+  return gulp.src(paths.styles.src)
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./_sass/'));
-});
-
-// purify removes unused CSS classes
-gulp.task('purify', ['sass'],  function() {
-  return gulp.src('./_sass/main.css')
-    .pipe(purify(['./_layouts/**.html', './_pages/**.html'], {info: true}))
+    .pipe(purgecss({content: ['_includes/*.html', '_layouts/*.html', '_pages/*.html']}))
     .pipe(replace(/!important/gm, ''))
-    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(cleanCSS({compatibility: 'ie8'}, (details) => {
+      console.log(`Minification of ${details.name}: ${details.stats.originalSize} -> ${details.stats.minifiedSize} b`);
+    }))
     .pipe(rename({ suffix: '-min' }))
-    .pipe(gulp.dest('./_includes'));
-});
+    .pipe(gulp.dest('./_includes/'));
+}
 
-gulp.task("watch", ["purify"], function() {
-  gulp.watch(["./_sass/main.scss", "./_sass/_variables.scss"], ["sass", "purify"]);
-  gulp.watch(["./_pages/**", "./_layouts/**", "./_includes/**.html", "./blog/*"], ["purify"]);
-})
-
-gulp.task('default', ['sass', 'purify'], function(){});
+function watch() {
+  gulp.watch(["_layouts/*", "_includes/*.html", "_sass/*", "assets/css/*", "collections/**/*"], purification);
+}
+ 
+exports.images = images;
+exports.thumbnails = thumbnails;
+exports.amp_validator = amp_validator;
+exports.purification = purification;
+exports.watch = watch;
