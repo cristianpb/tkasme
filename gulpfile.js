@@ -15,8 +15,8 @@ var paths = {
     dest: '_includes'
   },
   images: {
-    src: 'assets/img',
-    dest: 'assets/img'
+    src: 'assets/images',
+    dest: 'assets/images'
   },
   html: {
     src: '_site/{index,es,fr}.html'
