@@ -7,7 +7,6 @@
    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-   <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
     <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
     <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
@@ -30,26 +29,23 @@
 </head>
 <body class="has-navbar-fixed-top">
   
-  <nav class="navbar is-fixed-top is-primary header">
+  <nav class="navbar is-fixed-top header">
     <div class="navbar-brand">
         <a class="navbar-item" href="/">
-          <amp-img src="/assets/images/logo.svg" alt="Tk asme logo" width="160" height="40"></amp-img>
+          <amp-img src="/assets/images/logo2.png" alt="Tk asme logo" width="80" height="40"></amp-img>
         </a>
-      <a class="navbar-burger burger" on='tap:sidebar.toggle' 
-        data-target="navbarExampleTransparentExample">
+      <a 
+        id="buger"
+        class="navbar-burger burger" 
+        on="tap:navbarMenu.toggleClass(class='is-active'),buger.toggleClass(class='is-active')"
+        data-target="navbarMenu">
         <span></span>
         <span></span>
         <span></span>
       </a>
     </div>
 
-    <div id="navbarExampleTransparentExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="/">
-          Tk Asme API Ingenieria
-        </a>
-      </div>
-
+    <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-end">
         <a class="navbar-item is-link" href="/#servicios">
           Servicios
@@ -69,35 +65,6 @@
       </div>
     </div>
   </nav>
-
-
-  <amp-sidebar id="sidebar"
-    layout="nodisplay"
-    side="right">
-    <amp-img class="amp-close-image"
-      src="/assets/images/close.png"
-      width="20"
-      height="20"
-      alt="close sidebar"
-      on="tap:sidebar.close"
-      role="button"
-      tabindex="0"></amp-img>
-    <a class="navbar-item is-link" href="/#servicios">
-      Servicios
-    </a>
-    <a class="navbar-item" href="/#portafolio">
-      Portafolio
-    </a>
-    <a class="navbar-item" href="/#about">
-      Acerca de nosotros
-    </a>
-    <a class="navbar-item" href="/#equipo">
-      Equipo
-    </a>
-    <a class="navbar-item" href="/#contactenos">
-      Contactenos
-    </a>
-  </amp-sidebar>
 
 {{ content }}
 <footer class="footer">
