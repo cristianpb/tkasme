@@ -19,7 +19,7 @@ var paths = {
     dest: 'assets/images'
   },
   html: {
-    src: '_site/{index,es,fr}.html'
+    src: '_site/*.html'
   }
 };
 
@@ -67,12 +67,12 @@ function images() {
       imagemin.gifsicle({interlaced: true}),
       imagemin.jpegtran({progressive: true}),
       imagemin.optipng({optimizationLevel: 5}),
-      imagemin.svgo({
-        plugins: [
-          {removeViewBox: true},
-          {cleanupIDs: false}
-        ]
-      })
+      // imagemin.svgo({
+      //   plugins: [
+      //     {removeViewBox: true},
+      //     {cleanupIDs: false}
+      //   ]
+      // })
     ], {verbose: true}))
     .pipe(gulp.dest(paths.images.dest))
 }
@@ -97,7 +97,7 @@ function purification() {
 }
 
 function watch() {
-  gulp.watch(["_layouts/*", "_includes/*.html", "_sass/*", "assets/css/*", "collections/**/*"], purification);
+  gulp.watch(["_layouts/*", "_includes/*.html", "_sass/*", "assets/css/*", "_pages/*"], purification);
 }
  
 exports.images = images;

@@ -75,39 +75,41 @@ image: /assets/images/logo.png
 </section>
 
 
-<section class="hero is-small is-primary" id="portafolio">
+<section class="hero is-small is-primary" id="productos">
   <div class="hero-body">
     <div class="container">
 
       <h2 class="title has-text-centered" >
-         Portafolio
+         Productos
       </h2>
 
       <p class="subtitle has-text-centered">
         Algunos de nuestros proyectos son
       </p>
       <div class="columns is-mobile is-multiline is-horizontal-center">
-
+        <amp-image-lightbox id="lightbox1" layout="nodisplay" data-close-button-aria-label="Close"></amp-image-lightbox>
         {% for project in site.data.portfolio %}
         <div class="column is-4-desktop is-12-mobile">
-          <div class='card-content is-horizontal-center'>
-            <amp-img src="{{ project.img }}"
-              on="tap:lightbox1" 
-              tabindex="0"
-              role="button"
-              alt="{{ project.title }}" height="289" width="400"
-              layout="responsive"></amp-img>
-          </div>
-          <h3 class="subtitle has-text-centered">
+          <h3 class="subtitle has-text-centered"  id="Producto{{ forloop.index }}">
             {{ project.title }}
           </h3>
-          <p class="has-text-centered">
+          <amp-img 
+            on="tap:lightbox1"
+            role="button"
+            tabindex="0"
+            aria-describedby="Producto{{ forloop.index }}"
+            alt="{{ project.title }}"
+            title="{{ project.title }}"
+            src="{{ project.img }}"
+            layout="intrinsic"
+            height="289"
+            width="400"></amp-img>
+          <div>
             {{ project.description }}
-          </p>
+          </div>
         </div>
         {% endfor %}
 
-        <amp-image-lightbox id="lightbox1" layout="nodisplay" data-close-button-aria-label="Close"></amp-image-lightbox>
 
       </div>
     </div>
@@ -184,44 +186,42 @@ image: /assets/images/logo.png
   </div>
 </section>
 
-<section class="hero is-medium is-primary" id="equipo">
+<section class="hero is-primary" id="equipo">
   <div class="hero-body">
     <div class="container">
       <h2 class="title has-text-centered">
         Nuestro equipo
       </h2>
-      <p class="has-text-centered">
-        Contamos con los recursos necesarios y un equipo humano con experiencia que nos permite dar soluciones eficientes y oportunas a las necesidades de nuestros clientes, empresas del sector industrial a nivel nacional.
-      </p>
+      <div class="columns is-mobile is-horizontal-center is-centered">
+        <div class="column is-4-desktop is-12-mobile">
+          <p class="has-text-centered">
+            Contamos con los recursos necesarios y un equipo humano con experiencia que nos permite dar soluciones eficientes y oportunas a las necesidades de nuestros clientes, empresas del sector industrial a nivel nacional.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section" id="clientes">
-  <div class="container is-fullhd">
+  <div class="container">
     <h2 class="title has-text-centered">
       Nuestros clientes
     </h2>
 
-    <div class="columns is-multiline is-horizontal-center is-mobile">
-      <div class="column is-4-desktop is-half-mobile">
-        <figure class="image">
-          <amp-img src="/assets/images/clientes/acueducto.svg" alt="acueducto bucaramanga" height="128" width="256" layout="responsive"></amp-img>
-        </figure>
+    <div class="columns is-mobile is-multiline is-horizontal-center is-centered">
+      <div class="column is-3-desktop is-half-mobile">
+          <amp-img src="/assets/images/clientes/acueducto.svg" alt="acueducto bucaramanga" height="150" width="150" layout="intrinsic"></amp-img>
       </div>
-      <div class="column is-4-desktop is-half-mobile">
-        <figure class="image">
-          <amp-img src="/assets/images/clientes/cemex.svg" alt="cemex" height="128" width="256" layout="responsive"></amp-img>
-        </figure>
+      <div class="column is-3-desktop is-half-mobile">
+          <amp-img src="/assets/images/clientes/cemex.svg" alt="cemex" height="150" width="150" layout="intrinsic"></amp-img>
       </div>
-      <div class="column is-4-desktop is-half-mobile">
-        <figure class="image">
-          <amp-img src="/assets/images/clientes/metrogas.svg" alt="metrogas" height="128" width="256" layout="responsive"></amp-img>
-        </figure>
+      <div class="column is-3-desktop is-half-mobile">
+          <amp-img src="/assets/images/clientes/metrogas.svg" alt="metrogas" height="150" width="150" layout="intrinsic"></amp-img>
       </div>
-      <div class="column is-4-desktop is-half-mobile">
+      <div class="column is-3-desktop is-half-mobile">
         <figure class="image">
-          <amp-img src="/assets/images/clientes/gasan.svg" alt="gasan" height="128" width="256" layout="responsive"></amp-img>
+          <amp-img src="/assets/images/clientes/gasan.svg" alt="gasan" height="150" width="150" layout="intrinsic"></amp-img>
         </figure>
       </div>
       <div class="column is-4-desktop is-half-mobile">

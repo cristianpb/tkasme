@@ -5,10 +5,8 @@
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-   <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
     <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -47,30 +45,67 @@
 
     <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item is-link"
-          on="tap:servicios.scrollTo(duration=500)"
-          >
-          Servicios
-        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" on="tap:productos.scrollTo(duration=500)">
+            Recipientes a presión
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/recipientes-api">
+              Recipientes API
+            </a>
+            <a class="navbar-item" href="/recipientes-atm">
+              Recipientes Atmosféricos
+            </a>
+            <a class="navbar-item" href="/recipientes-glp">
+              Recipientes GLP (Gas propano)
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="/diques-contenedores">
+              Diques contenedores
+            </a>
+            <a class="navbar-item" href="/rolado-laminas">
+              Rolado de laminas
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" on="tap:servicios.scrollTo(duration=500)">
+            Mantenimiento
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/mantenimiento">
+              Sandblasting y Pintura
+            </a>
+            <a class="navbar-item" href="/inspeccion">
+              Inspección
+            </a>
+          </div>
+        </div>
+
         <a class="navbar-item" 
-          on="tap:portafolio.scrollTo(duration=500)"
-          >
-          Portafolio
+           href="/obras-gasoductos"
+           >
+           Gasoductos
         </a>
+
         <a class="navbar-item" 
-          on="tap:about.scrollTo(duration=500)"
-          >
-          Acerca de nosotros
+           href="/productos-metalicos"
+           >
+           Productos metálicos
         </a>
-        <a class="navbar-item"
-           on="tap:equipo.scrollTo(duration=500)"
-          >
-          Equipo
-        </a>
+
+
         <a class="navbar-item" 
+           {% if page.url == '/' %}
            on="tap:contactenos.scrollTo(duration=500)"
-          >
-          Contactenos
+           {% else %}
+           href="/#contactenos"
+           {% endif %}
+           >
+           Contactenos
         </a>
       </div>
     </div>
@@ -80,7 +115,7 @@
 <footer class="footer">
   <div class="container">
     <p class="has-text-centered">
-      {{ site.time | date: '%Y' }} - Tk Asme API Ingenieria
+      {{ site.time | date: '%Y' }} - TK Asme-API Ingeniería
     </p>
   </div>
 </footer>

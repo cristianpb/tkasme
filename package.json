@@ -4,9 +4,9 @@
   "description": "Tk Asme API",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "bundle exec jekyll serve --livereload",
     "images": "gulp images",
+    "test": "gulp amp_validator",
     "watch": "gulp watch"
   },
   "repository": {
